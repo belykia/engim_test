@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>SEARCH</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<style>
+u {
+  color: #ffffff;
+  background-color: #ff0000;
+}
+</style>
+
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-5">
+          <form class="form-group" action="index.html" method="post">
+            <input type="text" name="" value="" id = "input" onkeyup="find()"  placeholder="cerca">
+            <button class ="Btn btn-danger" type="button" name="button" onclick="find()"  >CERCA</button>
+          </form>
+          <h1>Angular</h1>
+          <p class="text-justify" id = "text">
+            Angular è stato completamente riscritto rispetto a AngularJS e le due versioni non sono compatibili. Il linguaggio di programmazione usato per AngularJS è JavaScript mentre quello di Angular è TypeScript[4].
+            Le applicazioni sviluppate in Angular vengono eseguite interamente dal web browser dopo essere state scaricate dal web server. Questo comporta il risparmio di dover spedire indietro la pagina web al web-server ogni volta che c'è una richiesta di azione da parte dell'utente. Il codice generato da Angular gira su tutti i principali web browser moderni quali ad esempio Chrome, Internet Explorer, Opera, Firefox, Safari ed altri[5].
+            Angular è stato progettato per fornire un strumento facile e veloce per sviluppare applicazioni che girano su qualunque piattaforma inclusi smartphone e tablet. Infatti le applicazioni web in Angular in combinazione con il toolkit open source Bootstrap diventano responsive, ossia il design del sito web si adatta in funzione alle dimensioni del dispositivo utilizzato[6].
+            È in corso di sviluppo un altro toolkit di design responsivo, Flex Layout, più semplice da usare rispetto a Bootstrap e concepito appositamente per Angular[7].
+            Altro toolkit che facilita la progettazione in Angular è Angular Material, una serie di componenti che permette di creare una pagina web molto velocemente: con l'utilizzo combinato di Flex Layout ed Angular Material si possono creare siti e applicazioni web responsive molto avanzate basate su Angular[8].
+          </p>
+        </div>
+      </div>
+    </div>
+    <script>
+    var text = document.getElementById("text").innerHTML;
+    function find(){
+    var ilias = document.getElementById("input").value;
+    if(ilias == "."){
+      modifiedtext = text.replace(/\./g,"<u>" + ilias + "</u>");
+      document.getElementById("text").innerHTML = modifiedtext;
+    }
+    else{
+      modifiedtext = text.replace(new RegExp  (ilias, 'g'), "<u>" + ilias + "</u>" );
+      document.getElementById("text").innerHTML = modifiedtext;
+    }
+    }
+    </script>
+
+  </body>
+</html>
